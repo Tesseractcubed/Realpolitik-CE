@@ -1,4 +1,4 @@
-#Realpolitik Community Edition#
+# Realpolitik Community Edition
 A modern overhaul to the Realpolitik software
 
 Realpolitik is a Diplomacy viewer and adjudicator developed in the 2000s, 
