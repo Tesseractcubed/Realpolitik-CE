@@ -1,0 +1,49 @@
+# This is a game file.
+# The core of the readable logic is written in YAML, to make parsing straightforward, as well as supporting JSON and other conversions.
+
+# GameData and Standard are necessary data (Map, Ruleset, Initial Config, Adjudicator, and Plugins required)
+
+
+Standard: Realpolitik-CE Game Version 0.0.0 Verbose Alpha 1 # Necessary to declare the sandard, as we share file extensions and things might change. 
+# Verbose refers to pulling in all information from other modules into the gamefile.
+GameData:
+  Map:
+    MapID:   # Let us reserve ID for the unique name, name for the as titled name, and source for a Github or similar link).
+    MapName:
+    MapVersion:
+    MapSource:
+  InitialConfig: # Need input on how to handle these files, as I could just point to ID / version, and go from there, 
+  # but also having more data allows a better method of loading and sourcing files baked into the game files.
+  # I need to refine the ordering (sequences or mappings, or other organization structure).
+  # I'm an idiot. There's a better way to do this. I can link .json or other files that reference this data in the folder that houses each game. 
+  # Using a file processing methodology like .3mf files from Bambu Labs, I can bundle files into a glorified zip file that is the vessel for delivering
+  # the necessary data. This then allows data to be stored in the big bundle or downloaded via a Community Mod Portal. Reusing others' ideas is good engineering.
+    ConfigID:
+    ConfigName:
+    ConfigVersion:
+    ConfigSource:
+  Adjudicators: # One adjuducator is probably enough, but the adjudicator will be partitioned into these four categories (to be adjusted as time goes on)
+  # such that changing the rules for one section doesn't affect other sections. For instance, coring in imperial diplomacy is an order, but builds don't care about the order 
+  # unless a core exists and is open. This partitioning allows for new variants and such
+    Orders:
+    Retreats:
+    Builds:
+    Winning:
+  Plugins:
+  - Plugin1:
+    PluginID:
+    PluginName:
+    PluginSource:
+  - Plugin2:
+    PluginID:
+    PluginName:
+    PluginSource:
+
+
+GameConfig: # GameConfig stores data like player information, type of game (local, etc), and other important non graphical details in the ruleset
+# Type of units to be used in the game
+# 
+
+GameState: # Gamestate stores a current state of the game ready to load into, as well as backpropogation a few adjudication layers.
+
+GameHistory: # GameHistory stores historical game states and orders, allowing interpretation between known locations on loading a GameHistory into a GUI or viewer. 
